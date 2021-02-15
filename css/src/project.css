@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.my-title {
+  @apply mt-6 text-center text-3xl font-extrabold text-gray-900
+}

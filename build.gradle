@@ -1,0 +1,30 @@
+plugins {
+  id 'java'
+  id 'application'
+}
+
+repositories {
+  mavenCentral()
+}
+
+group = 'de.spinscale.javalin'
+version = '0.1.0-SNAPSHOT'
+
+dependencies {
+  compile 'io.javalin:javalin:3.13.0'
+  // logging
+  compile 'org.slf4j:slf4j-simple:1.8.0-beta4'
+
+  // testing intentionally left blank, not part of this example
+}
+
+task copyCssFile(type: Copy) {
+  dependsOn ':css:build'
+  from 'css/build/src/project.css'
+  into 'build/resources/css'
+}
+compileJava.dependsOn 'copyCssFile'
+
+application {
+  mainClassName = 'Server'
+}

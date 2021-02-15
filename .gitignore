@@ -1,0 +1,5 @@
+.gradle
+build
+.idea
+css/node_modules
+css/package-lock.json
